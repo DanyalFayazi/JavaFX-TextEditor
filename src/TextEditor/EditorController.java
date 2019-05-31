@@ -13,6 +13,8 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//لطفا برای خروج به قسمت file رفته و بر روی close کلیک کنید
+
 public class EditorController implements Initializable {
 
     @FXML
