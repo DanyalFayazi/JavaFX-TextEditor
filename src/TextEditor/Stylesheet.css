@@ -1,0 +1,93 @@
+
+.master-pane {
+    -fx-background-color: #2F343F;
+}
+
+.text-area {
+    -fx-text-fill:#722504;
+    -fx-font-size: 20;
+    -fx-font-family: "Consolas";
+    -fx-focus-color: yellow;
+}
+
+
+.menu .label {
+    -fx-text-fill: #yellow;
+}
+
+
+
+.menu-bar {
+    -fx-background-color: #A400C7;
+    -fx-font-size: 16;
+    -fx-font-family: "Consolas";
+}
+
+.text-area .content {
+    -fx-background-color: #00F3D4
+
+}
+*{
+    -fx-my-menu-color:#A400C7 ;
+    -fx-my-menu-color-highlighted: #F500F9;
+    -fx-my-menu-font-color: #D1D6C5;
+    -fx-my-menu-font-color-highlighted: black;
+}
+
+
+
+.menu-bar > .container > .menu-button {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+
+.menu-bar > .container > .menu-button > .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+
+.menu-bar > .container > .menu-button > .label:disabled {
+     -fx-opacity: 1.0;
+ }
+
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+.menu-item {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+
+.menu-item .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+
+.menu-item .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+.menu-item:focused .label, .menu-item:hovered .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+.context-menu {
+    -fx-background-color: -fx-my-menu-color;
+}
+

@@ -1,4 +1,4 @@
-package abrand;
+package TextEditor;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,10 +18,10 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("View.fxml"));
 
         Parent root = fxmlLoader.load();
-        Controller controller = fxmlLoader.getController();
-        controller.init(myStage);
+        EditorController controller = fxmlLoader.getController();
+        controller.Initialization(myStage);
 
-        myStage.setTitle("JavaFX Text Editor");
+        myStage.setTitle("untitled");
         myStage.setScene(new Scene(root, 700, 500));
         myStage.show();
     }

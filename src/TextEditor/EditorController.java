@@ -1,4 +1,4 @@
-package abrand;
+package TextEditor;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -15,7 +15,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class EditorController implements Initializable {
 
     @FXML
     private TextArea textArea;
@@ -23,21 +23,12 @@ public class Controller implements Initializable {
     private Stage stage;
     private final FileChooser fileChooser = new FileChooser();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        fileChooser
-                .getExtensionFilters()
-                .addAll(
-                        new FileChooser.ExtensionFilter("Text", "*.txt"),
-                        new FileChooser.ExtensionFilter("All Files", "*.*"));
-    }
 
-    public void init(Stage myStage) {
+
+    public void Initialization(Stage myStage) {
         this.stage = myStage;
     }
 
-    @FXML
     public void exit() {
         if (textArea.getText().isEmpty()) {
             Platform.exit();
@@ -64,6 +55,7 @@ public class Controller implements Initializable {
         }
     }
 
+
     @FXML
     private void save() {
         try {
@@ -83,12 +75,12 @@ public class Controller implements Initializable {
         }
     }
 
-    @FXML
+
     public void openFile() {
         fileChooser.setTitle("Open File");
         File file = fileChooser.showOpenDialog(stage);
-
         if (file != null) {
+            stage.setTitle(file.getName());
             textArea.clear();
             readText(file);
         }
@@ -108,41 +100,46 @@ public class Controller implements Initializable {
         }
     }
 
-    //TODO add confirmation window if text editor has text and wasn't saved
 
-    @FXML
+
+
     public void newFile() {
         textArea.clear();
     }
 
-    @FXML
+
     public void about() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         alert.setTitle("About");
-        alert.setHeaderText("A project just for fun written by abrand.");
-        alert.setContentText("github.com/abrandell");
+        alert.setHeaderText("text editor project designed by Danial Fayazi");
         alert.showAndWait();
     }
 
-    // TODO Add a proper font-size menu && color selection
 
-    @FXML
+
     public void fontSize(ActionEvent e) {
         String choice = ((CheckMenuItem) e.getSource()).getId();
 
         switch (choice) {
             case "small":
-                textArea.setStyle("-fx-font-size: 14px");
+                textArea.setStyle("-fx-font-size: 10px");
                 break;
             case "default":
                 textArea.setStyle("-fx-font-size: 22px");
                 break;
             case "large":
-                textArea.setStyle("-fx-font-size: 30px");
+                textArea.setStyle("-fx-font-size: 44px");
                 break;
             default:
                 textArea.setStyle("-fx-font-size: 22px");
         }
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        fileChooser.getExtensionFilters().addAll(
+                //new FileChooser.ExtensionFilter("Text", "*.txt"),
+                new FileChooser.ExtensionFilter("All Files", "*.obj"));
     }
 }
